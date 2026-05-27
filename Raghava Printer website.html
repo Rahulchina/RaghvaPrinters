@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Raghava Printers - Premium printing solutions for businesses and individuals. Visiting cards, banners, wedding cards, brochures, and more.">
+<title>Raghava Printers | Premium Printing Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --crimson: #c0392b;
+    --crimson-light: #e74c3c;
+    --white: #ffffff;
+    --off-white: #f8f7f4;
+    --gray-100: #f1f0ed;
+    --gray-200: #e0ddd8;
+    --gray-400: #9a9690;
+    --gray-600: #5a5650;
+    --cyan: #00b4d8;
+    --magenta: #d63384;
+    --yellow: #ffc107;
+    --shadow-sm: 0 2px 8px rgba(15,31,61,0.08);
+    --shadow-md: 0 8px 32px rgba(15,31,61,0.12);
+    --shadow-lg: 0 20px 60px rgba(15,31,61,0.18);
+    --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(15,31,61,0.97);
+    backdrop-filter: blur(12px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.2);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 38px; height: 38px;
+    background: var(--crimson);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; color: white;
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-family: var(--font-display);
+    flex-shrink: 0;
+  }
+  .nav-logo-text { color: white; font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; line-height: 1; }
+  .nav-logo-sub { color: var(--gray-400); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2px; align-items: center; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    padding: 8px 14px; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 500;
+    transition: var(--transition);
+    letter-spacing: 0.02em;
+  }
+  .nav-links a:hover, .nav-links a.active { color: white; background: rgba(255,255,255,0.1); }
+  .nav-cta {
+    background: var(--crimson) !important;
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 6px !important;
+  }
+  .nav-cta:hover { background: var(--crimson-light) !important; transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: var(--transition); }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0;
+    background: var(--navy); padding: 20px 5%;
+    flex-direction: column; gap: 4px; z-index: 999;
+    box-shadow: var(--shadow-md);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; padding: 12px 16px; border-radius: 8px; font-size: 1rem; font-weight: 500; transition: var(--transition); }
+  .mobile-menu a:hover { color: white; background: rgba(255,255,255,0.08); }
+
+  /* ── PAGES ── */
+  .page { display: none; padding-top: 68px; min-height: 100vh; }
+  .page.active { display: block; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: calc(100vh - 68px);
+    background: var(--navy);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+    padding: 80px 5%;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(192,57,43,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(0,180,216,0.1) 0%, transparent 50%);
+  }
+  .hero-dots {
+    position: absolute; inset: 0; overflow: hidden;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 640px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(192,57,43,0.2); border: 1px solid rgba(192,57,43,0.4);
+    color: #ff8a7a; padding: 6px 16px; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-badge::before { content: '●'; color: var(--crimson-light); font-size: 0.6rem; }
+  .hero h1 {
+    font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 800; line-height: 1.1; color: white;
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero h1 em { color: var(--crimson-light); font-style: normal; }
+  .hero p {
+    color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.7;
+    margin-bottom: 36px; max-width: 500px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.8s 0.3s ease both; }
+  .btn-primary {
+    background: var(--crimson); color: white;
+    padding: 14px 32px; border-radius: 8px;
+    font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 20px rgba(192,57,43,0.35);
+  }
+  .btn-primary:hover { background: var(--crimson-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,57,43,0.4); }
+  .btn-outline {
+    background: transparent; color: white;
+    padding: 14px 32px; border-radius: 8px;
+    font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3); cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.07); transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 40px; margin-top: 56px;
+    padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+  .hero-stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: white; }
+  .hero-stat-label { color: rgba(255,255,255,0.5); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+  .hero-visual {
+    position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+    width: min(420px, 40vw); aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-visual-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    width: 100%; transform: rotate(-5deg);
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 22px 18px;
+    backdrop-filter: blur(8px);
+    animation: float 4s ease-in-out infinite;
+    transition: var(--transition);
+  }
+  .hero-card:nth-child(2) { animation-delay: 1s; margin-top: 20px; }
+  .hero-card:nth-child(3) { animation-delay: 2s; margin-top: -10px; }
+  .hero-card:nth-child(4) { animation-delay: 0.5s; margin-top: 10px; }
+  .hero-card-icon { font-size: 1.8rem; margin-bottom: 8px; }
+  .hero-card-label { color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 96px 5%; }
+  .section-alt { background: var(--off-white); }
+  .section-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+  .section-tag {
+    display: inline-block;
+    color: var(--crimson); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800; line-height: 1.15; color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .section-sub { color: var(--gray-600); font-size: 1rem; line-height: 1.7; }
+
+  /* ── SERVICES GRID ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .service-card {
+    background: white; border-radius: 16px;
+    padding: 36px 28px; position: relative; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--crimson); opacity: 0;
+    transition: var(--transition);
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: var(--off-white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: 20px;
+    transition: var(--transition);
+  }
+  .service-card:hover .service-icon { background: rgba(192,57,43,0.1); }
+  .service-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+  .service-card p { color: var(--gray-600); font-size: 0.9rem; line-height: 1.6; }
+  .service-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--crimson); font-size: 0.85rem; font-weight: 600;
+    margin-top: 16px; text-decoration: none;
+    transition: var(--transition);
+  }
+  .service-link:hover { gap: 10px; }
+
+  /* ── WHY CHOOSE US ── */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px; }
+  .why-card { text-align: center; padding: 40px 24px; }
+  .why-icon {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: rgba(192,57,43,0.08); margin: 0 auto 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    transition: var(--transition);
+  }
+  .why-card:hover .why-icon { background: var(--crimson); transform: scale(1.1) rotate(5deg); }
+  .why-card h3 { font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; }
+  .why-card p { color: var(--gray-600); font-size: 0.9rem; line-height: 1.6; }
+
+  /* ── PORTFOLIO ── */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .portfolio-item {
+    border-radius: 14px; overflow: hidden;
+    position: relative; aspect-ratio: 4/3;
+    cursor: pointer; box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  .portfolio-item:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+  .portfolio-bg {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .portfolio-overlay {
+    position: absolute; inset: 0;
+    background: rgba(15,31,61,0.8);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    opacity: 0; transition: var(--transition);
+    padding: 20px; text-align: center;
+  }
+  .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+  .portfolio-overlay h4 { color: white; font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; }
+  .portfolio-overlay p { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+  .testimonial-card {
+    background: white; border-radius: 16px; padding: 32px;
+    box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
+    position: relative; transition: var(--transition);
+  }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .testimonial-stars { color: var(--yellow); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+  .testimonial-text { color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 800;
+    color: white; flex-shrink: 0;
+  }
+  .testimonial-name { font-weight: 700; font-size: 0.9rem; }
+  .testimonial-role { color: var(--gray-400); font-size: 0.8rem; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: var(--navy); padding: 80px 5%;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-band::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(192,57,43,0.2) 0%, transparent 70%);
+  }
+  .cta-band h2 {
+    font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: white; font-weight: 800; margin-bottom: 16px;
+    position: relative; z-index: 1;
+  }
+  .cta-band p { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 32px; position: relative; z-index: 1; }
+  .cta-band .btn-primary { position: relative; z-index: 1; }
+
+  /* ── ABOUT ── */
+  .about-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-visual {
+    position: relative; border-radius: 20px; overflow: hidden;
+    background: linear-gradient(135deg, var(--navy), #1a3a6e);
+    padding: 60px 40px; min-height: 400px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-visual-content { text-align: center; }
+  .about-visual-icon { font-size: 4rem; margin-bottom: 20px; }
+  .about-visual h3 { font-family: var(--font-display); color: white; font-size: 1.5rem; margin-bottom: 12px; }
+  .about-visual p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.7; }
+  .about-accent {
+    position: absolute; top: -20px; right: -20px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(192,57,43,0.15); border: 1px solid rgba(192,57,43,0.3);
+  }
+  .about-content h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+  .about-content p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.75; margin-bottom: 20px; }
+  .values-list { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+  .value-item { display: flex; align-items: flex-start; gap: 14px; }
+  .value-check { width: 24px; height: 24px; border-radius: 50%; background: rgba(192,57,43,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--crimson); font-size: 0.75rem; margin-top: 2px; }
+  .value-item strong { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; }
+  .value-item span { color: var(--gray-600); font-size: 0.85rem; }
+
+  /* ── SERVICES PAGE ── */
+  .service-detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+  .service-detail-card {
+    background: white; border-radius: 18px; overflow: hidden;
+    box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
+    transition: var(--transition);
+  }
+  .service-detail-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+  .service-detail-header {
+    padding: 32px; background: linear-gradient(135deg, var(--navy), #1e3a6e);
+    position: relative; overflow: hidden;
+  }
+  .service-detail-header::after {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 100px; height: 100px; border-radius: 50%;
+    background: rgba(192,57,43,0.2);
+  }
+  .service-detail-emoji { font-size: 2.5rem; margin-bottom: 12px; display: block; }
+  .service-detail-header h3 { font-family: var(--font-display); color: white; font-size: 1.3rem; font-weight: 700; }
+  .service-detail-body { padding: 28px 32px; }
+  .service-detail-body p { color: var(--gray-600); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+  .benefits-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+  .benefit-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--gray-600); }
+  .benefit-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--crimson); flex-shrink: 0; }
+  .btn-inquire {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--off-white); color: var(--navy);
+    padding: 10px 22px; border-radius: 8px;
+    font-size: 0.85rem; font-weight: 600;
+    text-decoration: none; border: 1px solid var(--gray-200);
+    transition: var(--transition); cursor: pointer;
+  }
+  .btn-inquire:hover { background: var(--crimson); color: white; border-color: var(--crimson); transform: translateY(-1px); }
+
+  /* ── PORTFOLIO PAGE ── */
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; justify-content: center; }
+  .filter-btn {
+    padding: 8px 20px; border-radius: 50px; font-size: 0.85rem;
+    font-weight: 600; cursor: pointer; border: 1.5px solid var(--gray-200);
+    background: white; color: var(--gray-600);
+    transition: var(--transition);
+  }
+  .filter-btn.active, .filter-btn:hover { background: var(--navy); color: white; border-color: var(--navy); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .gallery-item {
+    border-radius: 16px; overflow: hidden; position: relative;
+    cursor: pointer; box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  .gallery-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .gallery-img {
+    width: 100%; aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem; position: relative; overflow: hidden;
+  }
+  .gallery-info {
+    padding: 18px 20px; background: white;
+    border-top: 1px solid var(--gray-100);
+  }
+  .gallery-info h4 { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+  .gallery-info p { color: var(--gray-400); font-size: 0.8rem; }
+  .gallery-tag {
+    display: inline-block; background: var(--off-white); color: var(--gray-600);
+    font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 50px;
+    margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  .contact-info h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 16px; }
+  .contact-info p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; margin-bottom: 36px; }
+  .contact-items { display: flex; flex-direction: column; gap: 20px; }
+  .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+  .contact-item-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: rgba(192,57,43,0.1); display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .contact-item-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--crimson); margin-bottom: 4px; }
+  .contact-item-value { font-size: 0.95rem; color: var(--navy); font-weight: 500; }
+  .contact-form { background: white; border-radius: 20px; padding: 40px; box-shadow: var(--shadow-md); border: 1px solid var(--gray-200); }
+  .contact-form h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; margin-bottom: 28px; }
+  .form-group { margin-bottom: 20px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  input, select, textarea {
+    width: 100%; padding: 12px 16px; border-radius: 8px;
+    border: 1.5px solid var(--gray-200); font-size: 0.95rem;
+    font-family: var(--font-body); color: var(--navy);
+    background: var(--off-white); transition: var(--transition);
+    outline: none;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--crimson); background: white; box-shadow: 0 0 0 3px rgba(192,57,43,0.08); }
+  textarea { resize: vertical; min-height: 120px; }
+  .btn-submit {
+    width: 100%; background: var(--crimson); color: white;
+    padding: 14px 32px; border-radius: 8px; font-size: 1rem; font-weight: 600;
+    border: none; cursor: pointer; transition: var(--transition);
+    font-family: var(--font-body);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-submit:hover { background: var(--crimson-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(192,57,43,0.3); }
+  .map-placeholder {
+    margin-top: 40px; border-radius: 16px; overflow: hidden;
+    background: linear-gradient(135deg, #e8e4f0, #d0cce8);
+    height: 200px; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .map-inner { text-align: center; }
+  .map-inner .map-pin { font-size: 2.5rem; margin-bottom: 8px; }
+  .map-inner p { font-weight: 600; color: var(--navy); font-size: 0.9rem; }
+  .map-inner small { color: var(--gray-600); font-size: 0.8rem; }
+  .whatsapp-info {
+    background: #e8f8f0; border-radius: 12px; padding: 18px 22px;
+    display: flex; align-items: center; gap: 14px; margin-top: 24px;
+    border: 1px solid #c3e8d5;
+  }
+  .whatsapp-icon { font-size: 1.6rem; }
+  .whatsapp-info strong { font-size: 0.85rem; color: #1a6640; display: block; margin-bottom: 2px; }
+  .whatsapp-info span { font-size: 0.8rem; color: #2d8a57; }
+  .whatsapp-info a { color: #1a6640; font-weight: 600; font-size: 0.85rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080f1e; color: rgba(255,255,255,0.7);
+    padding: 64px 5% 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand p { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.5); margin-top: 14px; max-width: 280px; }
+  .footer-col h4 { color: white; font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-links { display: flex; flex-direction: column; gap: 8px; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+  .footer-links a:hover { color: white; transform: translateX(4px); display: inline-block; }
+  .social-icons { display: flex; gap: 10px; margin-top: 20px; }
+  .social-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 0.9rem; color: rgba(255,255,255,0.6);
+    transition: var(--transition);
+  }
+  .social-icon:hover { background: var(--crimson); color: white; border-color: var(--crimson); transform: translateY(-2px); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 12px; }
+  .footer-bottom p { font-size: 0.85rem; color: rgba(255,255,255,0.35); }
+  .print-colors { display: flex; gap: 6px; }
+  .color-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* ── WHATSAPP FLOAT ── */
+  .whatsapp-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 2000;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #25d366; color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: var(--transition);
+    animation: pulse-wa 2s ease-in-out infinite;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.5); animation: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  @keyframes pulse-wa { 0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 40px rgba(37,211,102,0.7); } }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-visual { display: none; }
+    .about-two-col { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .section { padding: 64px 5%; }
+    .hero { padding: 60px 5%; }
+    .hero-stats { gap: 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* ── MISC ── */
+  .divider { height: 1px; background: var(--gray-200); margin: 0; }
+  .tag-cyan { color: var(--cyan); }
+  .tag-mg { color: var(--magenta); }
+  .tag-yl { color: var(--yellow); }
+
+  /* Print colors band */
+  .cmyk-band {
+    height: 4px;
+    background: linear-gradient(to right, var(--cyan) 25%, var(--magenta) 25% 50%, var(--yellow) 50% 75%, var(--navy) 75%);
+  }
+
+  /* Notification / toast */
+  .toast {
+    position: fixed; bottom: 100px; right: 28px; z-index: 3000;
+    background: var(--navy); color: white; padding: 14px 22px;
+    border-radius: 12px; font-size: 0.9rem; font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(20px); opacity: 0;
+    transition: 0.4s ease;
+    pointer-events: none;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- CMYK Color Band at very top -->
+<div class="cmyk-band"></div>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#" class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-icon">RP</div>
+    <div>
+      <div class="nav-logo-text">Raghava Printers</div>
+      <div class="nav-logo-sub">Premium Print Studio</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a>
+    <a href="#" onclick="showPage('about')" id="nav-about">About</a>
+    <a href="#" onclick="showPage('services')" id="nav-services">Services</a>
+    <a href="#" onclick="showPage('portfolio')" id="nav-portfolio">Portfolio</a>
+    <a href="#" onclick="showPage('contact')" id="nav-contact" class="nav-cta">Get Quote</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="showPage('home'); toggleMenu()">🏠 Home</a>
+  <a href="#" onclick="showPage('about'); toggleMenu()">📖 About Us</a>
+  <a href="#" onclick="showPage('services'); toggleMenu()">🖨️ Services</a>
+  <a href="#" onclick="showPage('portfolio'); toggleMenu()">🎨 Portfolio</a>
+  <a href="#" onclick="showPage('contact'); toggleMenu()">✉️ Get Quote</a>
+</div>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-dots"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Trusted Since 2008 · Hyderabad</div>
+      <h1>High Quality <em>Printing Solutions</em> for Every Need</h1>
+      <p>From visiting cards to massive flex banners — we bring your brand to life with precision printing, vivid colors, and lightning-fast delivery.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary" onclick="showPage('contact')">🎯 Get Free Quote</a>
+        <a href="#" class="btn-outline" onclick="showPage('services')">Explore Services →</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">5000+</div>
+          <div class="hero-stat-label">Happy Clients</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">24hr</div>
+          <div class="hero-stat-label">Fast Delivery</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Quality Assured</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual-grid">
+        <div class="hero-card">
+          <div class="hero-card-icon">🪪</div>
+          <div class="hero-card-label">Visiting Cards</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">📋</div>
+          <div class="hero-card-label">Brochures</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🎊</div>
+          <div class="hero-card-label">Wedding Cards</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🖼️</div>
+          <div class="hero-card-label">Flex Banners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">Complete Printing Services Under One Roof</h2>
+      <p class="section-sub">Professional-grade output for every business and personal printing requirement.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🪪</div>
+        <h3>Visiting Cards</h3>
+        <p>Premium business cards with matte, gloss, UV, or embossed finishes that leave lasting impressions.</p>
+        <a href="#" class="service-link" onclick="showPage('services')">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎊</div>
+        <h3>Wedding Cards</h3>
+        <p>Elegant invitation cards with custom designs, premium paper stock, and beautiful envelopes.</p>
+        <a href="#" class="service-link" onclick="showPage('services')">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏔️</div>
+        <h3>Flex & Banners</h3>
+        <p>Large-format outdoor and indoor banners with vibrant UV-resistant inks for maximum impact.</p>
+        <a href="#" class="service-link" onclick="showPage('services')">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Brochures & Pamphlets</h3>
+        <p>Tri-fold, bi-fold, and multi-page brochures that communicate your brand story effectively.</p>
+        <a href="#" class="service-link" onclick="showPage('services')">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧾</div>
+        <h3>Bill Books & Invoices</h3>
+        <p>Customized bill books, receipt pads, and invoice sets in single or duplicate/triplicate copies.</p>
+        <a href="#" class="service-link" onclick="showPage('services')">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🖨️</div>
+        <h3>Offset Printing</h3>
+        <p>High-volume, cost-efficient offset printing with consistent quality across large print runs.</p>
+        <a href="#" class="service-link" onclick="showPage('services')">Learn more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section section-alt">
+    <div class="section-header">
+      <div class="section-tag">Why Raghava Printers</div>
+      <h2 class="section-title">The Printing Partner You Can Count On</h2>
+      <p class="section-sub">We combine technology, craftsmanship, and genuine care to deliver results that exceed expectations.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3>Affordable Pricing</h3>
+        <p>Competitive rates without compromising on quality. Bulk discounts available for large orders.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Fast Delivery</h3>
+        <p>Same-day and next-day delivery options for urgent orders. We meet your deadlines, always.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <h3>Premium Quality</h3>
+        <p>State-of-the-art machinery with stringent quality checks at every stage of production.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎨</div>
+        <h3>Custom Designs</h3>
+        <p>In-house design team ready to create or refine your artwork for perfect print-ready files.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h3>Dedicated Support</h3>
+        <p>Real humans who care. WhatsApp, call, or walk in — we're here to help you at every step.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌟</div>
+        <h3>15+ Years Trust</h3>
+        <p>Serving thousands of businesses and individuals since 2008 with a proven track record.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO PREVIEW -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-tag">Our Work</div>
+      <h2 class="section-title">Crafted with Precision, Delivered with Pride</h2>
+      <p class="section-sub">A glimpse of the print work we're proud of.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-bg" style="background: linear-gradient(135deg, #0f1f3d, #1a3a6e);">
+          <span>🪪</span>
+          <div class="portfolio-overlay"><h4>Premium Business Cards</h4><p>Soft-touch matte with gold foil</p></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-bg" style="background: linear-gradient(135deg, #8b1a4a, #c0392b);">
+          <span>🎊</span>
+          <div class="portfolio-overlay"><h4>Wedding Invitations</h4><p>Luxury box set with ribbon</p></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-bg" style="background: linear-gradient(135deg, #0a5c6b, #00b4d8);">
+          <span>🏔️</span>
+          <div class="portfolio-overlay"><h4>Outdoor Flex Banner</h4><p>12×4 ft UV-resistant print</p></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-bg" style="background: linear-gradient(135deg, #1a5e20, #2e7d32);">
+          <span>📋</span>
+          <div class="portfolio-overlay"><h4>Tri-fold Brochure</h4><p>300gsm gloss coated</p></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-bg" style="background: linear-gradient(135deg, #4a2060, #7b1fa2);">
+          <span>📣</span>
+          <div class="portfolio-overlay"><h4>Event Poster</h4><p>A2 vibrant digital print</p></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-bg" style="background: linear-gradient(135deg, #b45309, #d97706);">
+          <span>🧾</span>
+          <div class="portfolio-overlay"><h4>Custom Invoice Books</h4><p>Triplicate with logo emboss</p></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 48px;">
+      <a href="#" class="btn-primary" onclick="showPage('portfolio')">View Full Portfolio →</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt">
+    <div class="section-header">
+      <div class="section-tag">Client Love</div>
+      <h2 class="section-title">What Our Customers Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Raghava Printers delivered 1000 visiting cards in under 24 hours. The quality was exceptional and the matte finish looked absolutely professional. Highly recommended!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background: var(--crimson);">R</div>
+          <div>
+            <div class="testimonial-name">Rahul Sharma</div>
+            <div class="testimonial-role">Marketing Manager, TechStart</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Our wedding cards were stunning! The design team at Raghava Printers helped us create something truly unique and personal. Every guest complimented the quality."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background: var(--magenta);">P</div>
+          <div>
+            <div class="testimonial-name">Priya Reddy</div>
+            <div class="testimonial-role">Wedding Client, 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We've been using Raghava Printers for all our shop banners and brochures for 3 years. Consistent quality, fair pricing, and the team is always helpful. Our go-to printer!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background: var(--navy);">A</div>
+          <div>
+            <div class="testimonial-name">Aditya Kumar</div>
+            <div class="testimonial-role">Owner, FreshMart Stores</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <h2>Ready to Print Something Amazing?</h2>
+    <p>Get a free quote in minutes. No hidden charges, no surprises.</p>
+    <a href="#" class="btn-primary" onclick="showPage('contact')" style="display:inline-flex;">🚀 Request Free Quote</a>
+  </div>
+</div>
+
+<!-- ==================== ABOUT PAGE ==================== -->
+<div class="page" id="page-about">
+  <section class="section" style="padding-top: 80px;">
+    <div class="section-header">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title">Printing Excellence Since 2008</h2>
+      <p class="section-sub">Born in Hyderabad, trusted across Telangana.</p>
+    </div>
+
+    <div class="about-two-col">
+      <div class="about-visual">
+        <div class="about-accent"></div>
+        <div class="about-visual-content">
+          <div class="about-visual-icon">🏭</div>
+          <h3>Our Print Studio</h3>
+          <p>Equipped with the latest digital and offset printing machinery, our studio handles everything from a single card to thousands of copies with equal care.</p>
+          <div style="display:flex; gap:24px; justify-content:center; margin-top:28px; flex-wrap:wrap;">
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-display); font-size:2rem; color:white; font-weight:800;">5000+</div>
+              <div style="color:rgba(255,255,255,0.5); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Clients Served</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-display); font-size:2rem; color:white; font-weight:800;">15+</div>
+              <div style="color:rgba(255,255,255,0.5); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Years Active</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-display); font-size:2rem; color:white; font-weight:800;">50K+</div>
+              <div style="color:rgba(255,255,255,0.5); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Orders Complete</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-tag">Who We Are</div>
+        <h2>A Local Business Built on Trust &amp; Craft</h2>
+        <p>Raghava Printers started as a small print shop in Hyderabad in 2008, founded by Mr. Venkat Rao with one laser printer and a big dream. Today, we operate a full-scale print studio with digital, offset, and large-format capabilities serving businesses, individuals, and event planners across Telangana.</p>
+        <p>We believe every print job is a reflection of someone's brand, moment, or message — and we treat it with that level of respect. Whether it's 100 visiting cards or 10,000 wedding invitations, you get the same dedication to quality.</p>
+        <div class="values-list">
+          <div class="value-item">
+            <div class="value-check">✓</div>
+            <div><strong>Integrity First</strong><span>Transparent pricing. No hidden costs. What we quote is what you pay.</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-check">✓</div>
+            <div><strong>Quality Commitment</strong><span>Every batch is checked before delivery. We reprint if it's not right — no questions asked.</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-check">✓</div>
+            <div><strong>Community Focus</strong><span>Proud to serve local businesses, schools, and families in our community since day one.</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-check">✓</div>
+            <div><strong>Continuous Growth</strong><span>Investing in new technology and training to always deliver better results.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION SECTION -->
+  <section class="section section-alt">
+    <div class="section-header">
+      <div class="section-tag">Our Mission</div>
+      <h2 class="section-title">Empowering Every Brand, Big or Small</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px;">
+      <div style="background:white; border-radius:16px; padding:36px; box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); text-align:center;">
+        <div style="font-size:2.5rem; margin-bottom:16px;">🎯</div>
+        <h3 style="font-family:var(--font-display); font-size:1.15rem; margin-bottom:12px;">Our Mission</h3>
+        <p style="color:var(--gray-600); font-size:0.9rem; line-height:1.7;">To provide affordable, high-quality printing solutions that help businesses grow and individuals celebrate life's special moments.</p>
+      </div>
+      <div style="background:white; border-radius:16px; padding:36px; box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); text-align:center;">
+        <div style="font-size:2.5rem; margin-bottom:16px;">🔭</div>
+        <h3 style="font-family:var(--font-display); font-size:1.15rem; margin-bottom:12px;">Our Vision</h3>
+        <p style="color:var(--gray-600); font-size:0.9rem; line-height:1.7;">To become Hyderabad's most trusted print partner — known not just for quality output but for the relationships we build with every client.</p>
+      </div>
+      <div style="background:white; border-radius:16px; padding:36px; box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); text-align:center;">
+        <div style="font-size:2.5rem; margin-bottom:16px;">⭐</div>
+        <h3 style="font-family:var(--font-display); font-size:1.15rem; margin-bottom:12px;">Our Promise</h3>
+        <p style="color:var(--gray-600); font-size:0.9rem; line-height:1.7;">If you're not 100% satisfied with your order, we'll make it right. Your satisfaction is not just a goal — it's our guarantee.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Let's Create Something Together</h2>
+    <p>Get in touch and tell us about your printing needs.</p>
+    <a href="#" class="btn-primary" onclick="showPage('contact')" style="display:inline-flex;">Contact Us Today</a>
+  </div>
+</div>
+
+<!-- ==================== SERVICES PAGE ==================== -->
+<div class="page" id="page-services">
+  <section class="section" style="padding-top: 80px;">
+    <div class="section-header">
+      <div class="section-tag">Our Services</div>
+      <h2 class="section-title">Everything You Need to Print, Here</h2>
+      <p class="section-sub">From business essentials to celebration stationery — we handle it all with expertise and care.</p>
+    </div>
+    <div class="service-detail-grid">
+      <div class="service-detail-card">
+        <div class="service-detail-header">
+          <span class="service-detail-emoji">🪪</span>
+          <h3>Visiting Card Printing</h3>
+        </div>
+        <div class="service-detail-body">
+          <p>Make a powerful first impression. Our visiting cards are printed on premium 300-400gsm stocks with a variety of finishes including matte, gloss, UV spot, embossing, and foil stamping.</p>
+          <div class="benefits-list">
+            <div class="benefit-item"><div class="benefit-dot"></div>Multiple finish options: matte, gloss, UV, foil</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>300gsm, 400gsm premium card stock</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Standard, rounded corner, and die-cut shapes</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Minimum order: 100 cards</div>
+          </div>
+          <button class="btn-inquire" onclick="showPage('contact')">📩 Inquire Now</button>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <div class="service-detail-header" style="background: linear-gradient(135deg, #6b1a3a, #c0392b);">
+          <span class="service-detail-emoji">🎊</span>
+          <h3>Wedding Card Printing</h3>
+        </div>
+        <div class="service-detail-body">
+          <p>Your wedding is one of life's most special moments. Our wedding cards combine beautiful design with premium print quality to create keepsakes your guests will treasure.</p>
+          <div class="benefits-list">
+            <div class="benefit-item"><div class="benefit-dot"></div>Custom designs or bring your own artwork</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Box sets, folders, and envelope options</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Gold/silver foil and embossing available</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Delivery available pan-Hyderabad</div>
+          </div>
+          <button class="btn-inquire" onclick="showPage('contact')">📩 Inquire Now</button>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <div class="service-detail-header" style="background: linear-gradient(135deg, #0a5c6b, #00b4d8);">
+          <span class="service-detail-emoji">🏔️</span>
+          <h3>Banner &amp; Flex Printing</h3>
+        </div>
+        <div class="service-detail-body">
+          <p>High-impact large-format printing for outdoor and indoor banners. From shop hoardings to event backdrops, we print any size with vibrant, weather-resistant inks.</p>
+          <div class="benefits-list">
+            <div class="benefit-item"><div class="benefit-dot"></div>Any custom size available</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>UV-resistant inks for outdoor durability</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Star flex, vinyl, and backlit options</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Grommets and finishing included</div>
+          </div>
+          <button class="btn-inquire" onclick="showPage('contact')">📩 Inquire Now</button>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <div class="service-detail-header" style="background: linear-gradient(135deg, #1a4e1a, #2e7d32);">
+          <span class="service-detail-emoji">📋</span>
+          <h3>Brochure Printing</h3>
+        </div>
+        <div class="service-detail-body">
+          <p>Professional brochures and pamphlets that tell your brand story compellingly. Available in multiple folds and sizes with premium paper and binding options.</p>
+          <div class="benefits-list">
+            <div class="benefit-item"><div class="benefit-dot"></div>Bi-fold, tri-fold, Z-fold options</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>A4, A5, DL sizes and custom dimensions</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Gloss, matte, silk coated papers</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Design assistance available</div>
+          </div>
+          <button class="btn-inquire" onclick="showPage('contact')">📩 Inquire Now</button>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <div class="service-detail-header" style="background: linear-gradient(135deg, #4a2060, #7b1fa2);">
+          <span class="service-detail-emoji">🖥️</span>
+          <h3>Digital Printing</h3>
+        </div>
+        <div class="service-detail-body">
+          <p>Fast, cost-effective digital printing for short runs and quick turnaround. Perfect for on-demand printing, variable data, and personalized items.</p>
+          <div class="benefits-list">
+            <div class="benefit-item"><div class="benefit-dot"></div>Fast turnaround — same day possible</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Ideal for short runs (1–500 copies)</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Variable data and personalization</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Full-color with sharp detail</div>
+          </div>
+          <button class="btn-inquire" onclick="showPage('contact')">📩 Inquire Now</button>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <div class="service-detail-header" style="background: linear-gradient(135deg, #0f2a4a, #1565c0);">
+          <span class="service-detail-emoji">🖨️</span>
+          <h3>Offset Printing</h3>
+        </div>
+        <div class="service-detail-body">
+          <p>For high-volume orders, offset printing delivers consistent, stunning quality at the most economical per-unit cost. Ideal for bulk business materials.</p>
+          <div class="benefits-list">
+            <div class="benefit-item"><div class="benefit-dot"></div>Ideal for 500+ copies</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Precise Pantone color matching</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Wide paper and size range</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Best price per unit at scale</div>
+          </div>
+          <button class="btn-inquire" onclick="showPage('contact')">📩 Inquire Now</button>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <div class="service-detail-header" style="background: linear-gradient(135deg, #7a3500, #d35400);">
+          <span class="service-detail-emoji">🧾</span>
+          <h3>Bill Books &amp; Invoices</h3>
+        </div>
+        <div class="service-detail-body">
+          <p>Custom-branded bill books, invoice pads, and receipt books for your business. Available in single, duplicate, and triplicate NCR sets with your logo and details.</p>
+          <div class="benefits-list">
+            <div class="benefit-item"><div class="benefit-dot"></div>Duplicate/triplicate NCR paper</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Custom logo, branding, serial numbers</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Padded or book-bound options</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>GST invoice format available</div>
+          </div>
+          <button class="btn-inquire" onclick="showPage('contact')">📩 Inquire Now</button>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <div class="service-detail-header" style="background: linear-gradient(135deg, #1a3a1a, #388e3c);">
+          <span class="service-detail-emoji">✨</span>
+          <h3>Custom Print Solutions</h3>
+        </div>
+        <div class="service-detail-body">
+          <p>Something unique in mind? We love custom projects. From die-cut shapes to specialty finishes, packaging inserts to event programs — if it's printable, we can do it.</p>
+          <div class="benefits-list">
+            <div class="benefit-item"><div class="benefit-dot"></div>Die-cut and custom shape printing</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Specialty finishes: foil, emboss, spot UV</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Packaging inserts and custom stickers</div>
+            <div class="benefit-item"><div class="benefit-dot"></div>Free consultation for unique requirements</div>
+          </div>
+          <button class="btn-inquire" onclick="showPage('contact')">📩 Inquire Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Not Sure What You Need?</h2>
+    <p>Talk to our team — we'll help you find the perfect solution for your requirements and budget.</p>
+    <a href="#" class="btn-primary" onclick="showPage('contact')" style="display:inline-flex;">💬 Get Expert Advice</a>
+  </div>
+</div>
+
+<!-- ==================== PORTFOLIO PAGE ==================== -->
+<div class="page" id="page-portfolio">
+  <section class="section" style="padding-top: 80px;">
+    <div class="section-header">
+      <div class="section-tag">Our Portfolio</div>
+      <h2 class="section-title">Printed with Passion. Delivered with Pride.</h2>
+      <p class="section-sub">A showcase of our finest work across all categories.</p>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all" onclick="filterGallery('all', this)">All Work</button>
+      <button class="filter-btn" data-filter="cards" onclick="filterGallery('cards', this)">Cards</button>
+      <button class="filter-btn" data-filter="banners" onclick="filterGallery('banners', this)">Banners</button>
+      <button class="filter-btn" data-filter="wedding" onclick="filterGallery('wedding', this)">Wedding</button>
+      <button class="filter-btn" data-filter="brochure" onclick="filterGallery('brochure', this)">Brochures</button>
+      <button class="filter-btn" data-filter="stationery" onclick="filterGallery('stationery', this)">Stationery</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item" data-cat="cards">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #0f1f3d, #1a3a6e);">🪪</div>
+        <div class="gallery-info">
+          <h4>Executive Business Cards</h4>
+          <p>Soft-touch matte with gold foil name</p>
+          <span class="gallery-tag">Visiting Cards</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="wedding">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #8b1a4a, #c0392b);">💌</div>
+        <div class="gallery-info">
+          <h4>Luxury Wedding Suite</h4>
+          <p>Box set, RSVP, menu card combo</p>
+          <span class="gallery-tag">Wedding</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="banners">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #0a5c6b, #00b4d8);">🏔️</div>
+        <div class="gallery-info">
+          <h4>Restaurant Outdoor Banner</h4>
+          <p>16×4 ft Star Flex with UV inks</p>
+          <span class="gallery-tag">Banners</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="brochure">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #1a5e20, #2e7d32);">📗</div>
+        <div class="gallery-info">
+          <h4>Product Catalogue</h4>
+          <p>20-page saddle-stitched booklet</p>
+          <span class="gallery-tag">Brochures</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="stationery">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #7a3500, #d35400);">🧾</div>
+        <div class="gallery-info">
+          <h4>GST Bill Book Set</h4>
+          <p>Triplicate NCR with custom logo</p>
+          <span class="gallery-tag">Stationery</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="cards">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #1a0060, #4a00e0);">✨</div>
+        <div class="gallery-info">
+          <h4>Embossed Spot UV Card</h4>
+          <p>Premium 400gsm with tactile finish</p>
+          <span class="gallery-tag">Visiting Cards</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="banners">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #2d0060, #7b1fa2);">🖼️</div>
+        <div class="gallery-info">
+          <h4>Event Backdrop Banner</h4>
+          <p>10×8 ft with stand mount ready</p>
+          <span class="gallery-tag">Banners</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="brochure">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #003d50, #0288d1);">📋</div>
+        <div class="gallery-info">
+          <h4>Corporate Tri-fold</h4>
+          <p>300gsm gloss with fold scoring</p>
+          <span class="gallery-tag">Brochures</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="wedding">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #3d001e, #880e4f);">💐</div>
+        <div class="gallery-info">
+          <h4>Floral Wedding Invite</h4>
+          <p>Pastel theme with ribbon fold</p>
+          <span class="gallery-tag">Wedding</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Want Prints Like These?</h2>
+    <p>Get a custom quote for your next print project today.</p>
+    <a href="#" class="btn-primary" onclick="showPage('contact')" style="display:inline-flex;">🎯 Get Your Quote</a>
+  </div>
+</div>
+
+<!-- ==================== CONTACT PAGE ==================== -->
+<div class="page" id="page-contact">
+  <section class="section" style="padding-top: 80px;">
+    <div class="section-header">
+      <div class="section-tag">Contact Us</div>
+      <h2 class="section-title">Let's Talk About Your Print Project</h2>
+      <p class="section-sub">Fill in the form and our team will get back to you within a few hours.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>Whether you have a simple question or a complex requirement, we're here to help. Reach us by phone, WhatsApp, email, or walk in to our studio.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div class="contact-item-label">Phone / WhatsApp</div>
+              <div class="contact-item-value">+91 98765 43210</div>
+              <div class="contact-item-value" style="font-size:0.85rem; color:var(--gray-400); margin-top:2px;">Mon–Sat, 9am – 8pm</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">hello@raghavaprinters.in</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Studio Address</div>
+              <div class="contact-item-value">12-3, Lakshmi Nagar, Near KPHB Colony,<br>Kukatpally, Hyderabad – 500072</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div>
+              <div class="contact-item-label">Working Hours</div>
+              <div class="contact-item-value">Mon–Sat: 9:00 AM – 8:00 PM</div>
+              <div class="contact-item-value" style="font-size:0.85rem; color:var(--gray-400); margin-top:2px;">Sunday: 10:00 AM – 3:00 PM</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="whatsapp-info">
+          <div class="whatsapp-icon">💬</div>
+          <div>
+            <strong>WhatsApp for Quick Quotes</strong>
+            <span>Send your design file on WhatsApp for an instant quote!</span><br>
+            <a href="https://wa.me/919876543210" target="_blank">wa.me/919876543210 →</a>
+          </div>
+        </div>
+
+        <div class="map-placeholder" style="margin-top: 32px;">
+          <div class="map-inner">
+            <div class="map-pin">📍</div>
+            <p>Raghava Printers Studio</p>
+            <small>Kukatpally, Hyderabad, Telangana</small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-form">
+          <h3>📋 Request a Free Quote</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="e.g. Rahul Sharma" id="fname">
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="+91 98765 43210" id="fphone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@example.com" id="femail">
+          </div>
+          <div class="form-group">
+            <label>Service Required *</label>
+            <select id="fservice">
+              <option value="">-- Select a service --</option>
+              <option>Visiting Card Printing</option>
+              <option>Wedding Card Printing</option>
+              <option>Banner / Flex Printing</option>
+              <option>Brochure / Pamphlet</option>
+              <option>Bill Book / Invoice Pad</option>
+              <option>Digital Printing</option>
+              <option>Offset Printing</option>
+              <option>Custom / Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Quantity</label>
+              <input type="text" placeholder="e.g. 500 copies" id="fqty">
+            </div>
+            <div class="form-group">
+              <label>Deadline</label>
+              <input type="text" placeholder="e.g. 3 days" id="fdeadline">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Details / Special Requirements</label>
+            <textarea placeholder="Describe your project, size, finish, or any special requirements..." id="fmsg"></textarea>
+          </div>
+          <button class="btn-submit" onclick="submitForm()">
+            🚀 Send My Quote Request
+          </button>
+          <p style="font-size:0.78rem; color:var(--gray-400); margin-top:12px; text-align:center;">
+            We respond within 2–4 hours on business days.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:4px; display:flex; align-items:center; gap:10px; text-decoration:none;">
+        <div class="nav-logo-icon">RP</div>
+        <div>
+          <div class="nav-logo-text">Raghava Printers</div>
+          <div class="nav-logo-sub">Premium Print Studio</div>
+        </div>
+      </div>
+      <p>Hyderabad's trusted printing partner since 2008. We bring your designs to life with precision, quality, and speed.</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon" title="Facebook">f</a>
+        <a href="#" class="social-icon" title="Instagram">📸</a>
+        <a href="#" class="social-icon" title="WhatsApp">💬</a>
+        <a href="#" class="social-icon" title="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <div class="footer-links">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('services')">Services</a>
+        <a href="#" onclick="showPage('portfolio')">Portfolio</a>
+        <a href="#" onclick="showPage('contact')">Get Quote</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <div class="footer-links">
+        <a href="#" onclick="showPage('services')">Visiting Cards</a>
+        <a href="#" onclick="showPage('services')">Wedding Cards</a>
+        <a href="#" onclick="showPage('services')">Banners & Flex</a>
+        <a href="#" onclick="showPage('services')">Brochures</a>
+        <a href="#" onclick="showPage('services')">Offset Printing</a>
+        <a href="#" onclick="showPage('services')">Bill Books</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-links">
+        <a href="tel:+919876543210">📞 +91 98765 43210</a>
+        <a href="mailto:hello@raghavaprinters.in">✉️ hello@raghavaprinters.in</a>
+        <a href="#">📍 Kukatpally, Hyderabad</a>
+        <a href="#">🕐 Mon–Sat, 9am–8pm</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Raghava Printers. All rights reserved. Made with ❤️ in Hyderabad.</p>
+    <div class="print-colors">
+      <div class="color-dot" style="background: var(--cyan);"></div>
+      <div class="color-dot" style="background: var(--magenta);"></div>
+      <div class="color-dot" style="background: var(--yellow);"></div>
+      <div class="color-dot" style="background: white;"></div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- Toast -->
+<div class="toast" id="toast">✅ Quote request sent! We'll be in touch soon.</div>
+
+<script>
+  // ── PAGE NAVIGATION ──
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + name);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── HAMBURGER ──
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburger');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // ── GALLERY FILTER ──
+  function filterGallery(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = '';
+        item.style.animation = 'fadeUp 0.4s ease both';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // ── FORM SUBMIT ──
+  function submitForm() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const service = document.getElementById('fservice').value;
+    if (!name || !phone || !service) {
+      alert('Please fill in your name, phone, and select a service.');
+      return;
+    }
+    ['fname','fphone','femail','fservice','fqty','fdeadline','fmsg'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  // ── NAV SCROLL EFFECT ──
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 40) {
+      nav.style.background = 'rgba(8,15,30,0.98)';
+    } else {
+      nav.style.background = 'rgba(15,31,61,0.97)';
+    }
+  });
+
+  // ── OBSERVE ANIMATIONS ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animation = 'fadeUp 0.6s ease both';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service-card, .why-card, .testimonial-card, .service-detail-card, .gallery-item').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
